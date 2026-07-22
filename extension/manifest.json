@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "RTL Switch for Claude — راست‌چین‌ساز فارسی",
+  "version": "1.0.0",
+  "description": "اصلاح جهت متن فارسی/عربی در Claude و امکان سوییچ بین راست‌چین و چپ‌چین با یک دکمه.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "RTL Switch for Claude",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "permissions": ["scripting"],
+  "host_permissions": ["https://claude.ai/*", "https://*.claude.ai/*"],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://claude.ai/*",
+        "https://*.claude.ai/*"
+      ],
+      "js": ["rtl-engine.js", "content.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ]
+}

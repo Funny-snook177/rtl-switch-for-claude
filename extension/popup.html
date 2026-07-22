@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    :root { --brand:#c96442; --bg:#1f1e1d; --fg:#f5f4f2; --muted:#8a8785; }
+    * { box-sizing:border-box; }
+    body {
+      margin:0; width:260px; font-family:Tahoma, system-ui, sans-serif;
+      background:var(--bg); color:var(--fg); padding:14px;
+    }
+    h1 { font-size:14px; margin:0 0 2px; }
+    .sub { font-size:11px; color:var(--muted); margin:0 0 12px; line-height:1.6; }
+    .modes { display:flex; flex-direction:column; gap:8px; }
+    button.mode {
+      display:flex; align-items:center; gap:10px; width:100%;
+      background:#2b2a28; color:var(--fg); border:1px solid #3a3937;
+      border-radius:10px; padding:10px 12px; cursor:pointer; font-size:13px;
+      font-family:inherit; transition:background .12s, border-color .12s;
+    }
+    button.mode:hover { background:#343230; }
+    button.mode.active { border-color:var(--brand); background:#3a2a24; }
+    .ico { width:22px; text-align:center; font-size:16px; }
+    .desc { color:var(--muted); font-size:10px; margin-top:2px; }
+    .label { display:flex; flex-direction:column; text-align:right; }
+    .check { margin-inline-start:auto; color:var(--brand); font-weight:bold; }
+    .foot { font-size:10px; color:var(--muted); margin-top:12px; line-height:1.7; }
+    .warn { color:#e0a56a; }
+  </style>
+</head>
+<body>
+  <h1>راست‌چین‌ساز Claude</h1>
+  <p class="sub">جهت متن فارسی/عربی را در گفتگوهای Claude اصلاح می‌کند.</p>
+
+  <div class="modes" id="modes">
+    <button class="mode" data-mode="auto">
+      <span class="ico">☉</span>
+      <span class="label"><span>خودکار</span><span class="desc">هر پاراگراف بر اساس زبان خودش</span></span>
+      <span class="check"></span>
+    </button>
+    <button class="mode" data-mode="rtl">
+      <span class="ico">←</span>
+      <span class="label"><span>راست‌چین کامل</span><span class="desc">همه‌ی متن‌های فارسی راست‌چین</span></span>
+      <span class="check"></span>
+    </button>
+    <button class="mode" data-mode="off">
+      <span class="ico">○</span>
+      <span class="label"><span>خاموش</span><span class="desc">بازگشت به حالت اصلی Claude</span></span>
+      <span class="check"></span>
+    </button>
+  </div>
+
+  <p class="foot" id="foot">
+    یک دکمهٔ گرد قابل‌جابه‌جایی هم در لبهٔ راستِ صفحهٔ Claude اضافه می‌شود.
+  </p>
+
+  <script src="popup.js"></script>
+</body>
+</html>

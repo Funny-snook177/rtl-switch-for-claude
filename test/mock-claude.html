@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mock Claude Chat</title>
+  <style>
+    /* شبیه‌سازی استایل‌های کلاد: تراز چپِ اجباری که باید خنثی شود */
+    body { font-family: system-ui, 'Segoe UI', Tahoma, sans-serif; background:#262624; color:#eee; margin:0; }
+    main { max-width: 720px; margin: 0 auto; padding: 24px; }
+    .msg { margin: 18px 0; padding: 14px 16px; border-radius: 12px; background:#1f1e1d; }
+    .user { background:#30302e; }
+    .font-claude-message, .prose { text-align: left; }   /* کلاد این را چپ‌چین می‌گذارد */
+    .prose p, .prose li, .prose h2 { text-align: left; }  /* تراز اجباری چپ */
+    pre { background:#0d0d0d; padding:10px; border-radius:8px; overflow:auto; direction:ltr; }
+    code { font-family: 'Cascadia Code', monospace; }
+    h2 { font-size: 18px; }
+    ul, ol { margin: 8px 0; }
+    .role { font-size: 11px; opacity:.5; margin-bottom:6px; text-transform: uppercase; letter-spacing:.05em; }
+    textarea.composer { width:100%; height:60px; background:#1a1a19; color:#eee; border:1px solid #444; border-radius:8px; padding:10px; text-align:left; }
+  </style>
+</head>
+<body>
+  <main>
+    <!-- پیام کاربر: انگلیسی -->
+    <div class="msg user">
+      <div class="role">You</div>
+      <div class="prose"><p id="u1">Please explain recursion in Persian.</p></div>
+    </div>
+
+    <!-- پاسخ کلاد: فارسی (باید راست‌چین شود) -->
+    <div class="msg">
+      <div class="role">Claude</div>
+      <div class="font-claude-message">
+        <div class="prose">
+          <h2 id="a-h2">بازگشت (Recursion) چیست؟</h2>
+          <p id="a-p1">بازگشت یعنی وقتی یک تابع خودش را دوباره صدا می‌زند. این روش برای حل مسائلی که می‌توان آن‌ها را به نسخه‌های کوچک‌تر از خودشان تقسیم کرد بسیار مفید است.</p>
+          <p id="a-p2">برای مثال، فاکتوریل عدد <code>n</code> برابر است با <code>n × (n-1)!</code> که خودش یک تعریف بازگشتی است.</p>
+          <ul>
+            <li id="a-li1">هر تابع بازگشتی باید یک «حالت پایه» داشته باشد.</li>
+            <li id="a-li2">بدون حالت پایه، تابع تا بی‌نهایت اجرا می‌شود.</li>
+          </ul>
+          <pre id="a-code"><code>function factorial(n) {
+  if (n <= 1) return 1;      // base case
+  return n * factorial(n-1); // recursive step
+}</code></pre>
+          <p id="a-p3">در کد بالا، <code>factorial(5)</code> مقدار ۱۲۰ را برمی‌گرداند. موفق باشید!</p>
+          <!-- پاراگراف فارسی که با واژهٔ انگلیسی شروع می‌شود (باید RTL شود) -->
+          <p id="a-latinfirst">Python یک زبان برنامه‌نویسی قدرتمند و خواناست که برای شروع عالی است.</p>
+          <!-- پاراگراف انگلیسیِ اکثریت با یک واژهٔ فارسی (باید LTR بماند) -->
+          <p id="a-enmix">The Persian word سلام means hello and is used everywhere in daily speech.</p>
+          <!-- ارقام فارسی/عربی در جملهٔ انگلیسی (باید LTR بماند) -->
+          <p id="a-digits">۲۰۲۶ budget report was finalized by the finance team last week.</p>
+          <!-- جدول فارسی: در حالت RTL باید جهت جدول rtl شود -->
+          <table id="a-table">
+            <thead><tr><th id="a-th1">زبان</th><th id="a-th2">کاربرد</th></tr></thead>
+            <tbody>
+              <tr><td>پایتون</td><td>هوش مصنوعی</td></tr>
+              <tr><td>جاوااسکریپت</td><td>وب</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- پاسخ کلاد: انگلیسی (باید چپ‌چین بماند) -->
+    <div class="msg">
+      <div class="role">Claude</div>
+      <div class="font-claude-message">
+        <div class="prose">
+          <p id="a-en1">Here is the same idea in English. Recursion is when a function calls itself.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- پیام کاربر: ترکیبی فارسی و انگلیسی -->
+    <div class="msg user">
+      <div class="role">You</div>
+      <div class="prose"><p id="u2">ممنون! حالا لطفاً یک مثال با Python هم بزن.</p></div>
+    </div>
+
+    <textarea class="composer" id="composer">اینجا تایپ می‌کنم…</textarea>
+  </main>
+
+  <!-- موتور RTL (همان فایل مشترک) -->
+  <script src="../shared/rtl-engine.js"></script>
+</body>
+</html>
